@@ -8,7 +8,10 @@ function writePassword() {
 
   passwordText.value = password;
 
+  window.prompt(Test);
+
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
