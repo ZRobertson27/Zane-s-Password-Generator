@@ -32,33 +32,35 @@ function generatePassword() {
   return;
  }
  if (passLength < 8) {
-  window.alert("Please enter a larger number.");
+  window.alert("Please refresh the page and enter a larger number.");
   return;
  } 
  if (passLength > 128) {
-  window.alert("Please enter a smaller number.");
+  window.alert("Please refresh the page and enter a smaller number.");
   return;
  }
-
+// Set whether your want uppercase letters to true/false.
  var upCase = window.confirm("Would you like to include UPPERCASE LETTERS?");
-
+// Set whether you want lowercase letters to true/false
  var lowCase = window.confirm("Would you like to include LOWERCASE letters?");
-
+// Set whether you want special characters to true/false.
  var specCase = window.confirm("Would you like to include SPECIAL CHARACTERS?");
-
+// Set whether you want numbers to true/false.
  var numberCase = window.confirm("Would you like to include NUMBERS?");
-
+// If chosen character = true, will add array to variable availableCharacters.
  var availableCharacters = "";
  if (upCase) availableCharacters = availableCharacters.concat(bigLetter);
  if (lowCase) availableCharacters = availableCharacters.concat(littleLetter);
  if (specCase) availableCharacters = availableCharacters.concat(specials);
  if (numberCase) availableCharacters = availableCharacters.concat(numbers);
- 
+ // Logs for checking status / if everything works.
  console.log(passLength);
  console.log(availableCharacters);
+ // Equation to generate the random password.
  var characters = " ";
  for (var i = 0; i < passLength; i++) {
   characters += availableCharacters.charAt(Math.floor(Math.random() * passLength));
  }
+ console.log(characters);
  return characters;
 }
